@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(0, 0, 0, 0.779);
   
 }
 
@@ -22,14 +23,16 @@ code {
   flex-direction: column;
   background-size: cover;
   object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 10px;
 
 }
 
 .movie-list {
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap:0.2rem;
 }
 
 
@@ -78,6 +81,7 @@ code {
   display: flex;
   background-size: cover;
   flex-basis: 230px;
-  gap: 10px;
+  /* gap: 10px; */
+  border-radius: 10px;
  
 }
