@@ -1,0 +1,185 @@
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.container {
+    border: 1px solid black;
+    height: 100vh;
+    gap: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(3, auto);
+
+    background-color: gold;
+    background-image: url(/src/assets/ultraDeep.jpeg);
+    z-index: -10;
+}
+
+.poster-expanded {
+    grid-column: 1/-1;
+    grid-row: 1/3;
+    border-radius: 10px;
+    background-image: url(/src/assets/ultraDeep.jpeg);
+    background-size: cover;
+}
+
+.poster-expanded::before {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-size: 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.posters-list {
+    grid-row: 3/4;
+    grid-column: 1/-1;
+    gap: 2rem;
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.poster {
+    border-radius: 10px;
+    position: relative;
+    background-color: rgba(245, 245, 245, 0.851);
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+
+.poster::before {
+    position: absolute;
+    bottom:1rem;
+    font-size: 2rem;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(14px);
+    padding: 10px 1px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10px;
+}
+
+.poster-1 {
+    background-image: url(/src/assets/phantomMenace.jpeg);
+    background-size: cover;
+    background-position: 40%;
+    background-repeat:no-repeat;
+
+}
+
+.poster-1::before {
+    content: 'The Phantom Menace';
+}
+
+.poster-2 {
+    background-image: url(/src/assets/aNewHope.jpg);
+    background-size:cover;
+    background-position: top;
+    background-position: 0% 40%;
+}
+
+.poster-2::before {
+    content: 'A New Hope';
+}
+
+
+.poster-3 {
+    background-image: url(/src/assets/attackOfTheClones.jpeg);
+    background-size:cover;
+    background-position: bottom;
+}
+
+.poster-3::before {
+    content: "Attack Of The Clones"
+} 
+
+.poster-4 {
+    background-image: url(/src/assets/revengeOfTheSith.webp);
+    background-size:cover;
+    background-position: bottom;
+}
+
+.poster-4::before {
+    content: "Revenge Of The Sith"
+}
+
+.poster-5 {
+    background-image: url(/src/assets/theEmpireStrikesBack.jpg);
+    background-size:cover;
+    background-position: top; 
+} 
+
+.poster-5::before {
+    content: "The Empire Strikes Back"
+}
+
+.poster-6 {
+    background-image: url(/src/assets/theReturnOfTheJedi.jpg);
+    background-size:cover;
+    background-position: top;
+}
+
+.poster-6::before {
+    content: "Return Of The Jedi"
+}
+
+
+/* HOVER STATES */
+
+.poster:hover {
+    scale: 1.025;
+}
+
+.poster-expanded:has(+ .posters-list .poster-1:hover) {
+    background-image: url(/src/assets/phantomMenace.jpeg);
+    background-size: cover;
+    background-position: 40%;
+    background-size: 100% 140%;
+}
+
+.poster-expanded:has(+ .posters-list .poster-2:hover) {
+    background-image: url(/src/assets/aNewHope.jpg);
+    background-size: 100% 140%;
+    background-position: 40%;
+}
+
+.poster-expanded:has(+ .posters-list .poster-3:hover) {
+    background-image: url(/src/assets/attackOfTheClones.jpeg);
+    background-size: 100% 140%;
+    background-position: 40%;
+}
+
+.poster-expanded:has(+ .posters-list .poster-4:hover) {
+    background-image: url(/src/assets/revengeOfTheSith.webp);
+    background-size: 100% 140%;
+    background-position: 40%;
+}
+
+.poster-expanded:has(+ .posters-list .poster-5:hover) {
+    background-image: url(/src/assets/theEmpireStrikesBack.jpg);
+    background-size: 100% 140%;
+    background-position: 40%;
+}
+
+.poster-expanded:has(+ .posters-list .poster-6:hover) {
+    background-image: url(/src/assets/theReturnOfTheJedi.jpg);
+    background-size: 100% 140%;
+    background-position: 40%;
+}
+
